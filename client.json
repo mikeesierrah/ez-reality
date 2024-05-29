@@ -1,0 +1,56 @@
+{
+    "log": {
+        "loglevel": "debug"
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1", 
+            "port": 10808, 
+            "protocol": "socks",
+            "settings": {
+                "udp": true
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "routeOnly": true
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "server_address", 
+                        "port": 443, 
+                        "users": [
+                            {
+                                "id": "52702029-90d8-5e72-a639-3ef271c90e1b",
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "reality",
+                "realitySettings": {
+                    "fingerprint": "chrome", 
+                    "serverName": "cdn.discordapp.com",
+                    "publicKey": "AOLwaASZVBdYVhskvdlE8C47fYRfRN7vH0Rz3Y-z9mk",
+                    "spiderX": "", 
+                    "shortId": ""
+                }
+            },
+            "tag": "proxy"
+        }
+    ]
+}

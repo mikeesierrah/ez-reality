@@ -1,0 +1,50 @@
+{
+    "log": {
+        "loglevel": "debug"
+    },
+    "inbounds": [
+        {
+            "port": 443, 
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "52702029-90d8-5e72-a639-3ef271c90e1b",
+                        "flow": "xtls-rprx-vision"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "reality",
+                "realitySettings": {
+                    "dest": "discordapp.com",
+                    "serverNames": [
+                        "cdn.discordapp.com" 
+                    ],
+                    "privateKey": "gBznBqqU_Wfh010QCDwqddtk8SSbQ46n1OPnYeo0R1I", 
+                    "shortIds": [
+                        "",
+                        "0123456789abcdef"
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "routeOnly": true
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        }
+    ]
+}
