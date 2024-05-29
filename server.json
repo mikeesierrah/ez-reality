@@ -19,7 +19,7 @@
                 "network": "tcp",
                 "security": "reality",
                 "realitySettings": {
-                    "dest": "discordapp.com",
+                    "dest": "discordapp.com:443",
                     "serverNames": [
                         "cdn.discordapp.com" 
                     ],
