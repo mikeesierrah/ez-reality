@@ -42,9 +42,14 @@
         }
     ],
     "outbounds": [
-        {
-            "protocol": "freedom",
-            "tag": "direct"
+    {
+      "protocol": "freedom",
+      "streamSettings": {
+        "sockopt": {
+          "tcpFastOpen": true,
+          "interface": "warp"
         }
+      }
+    }
     ]
 }
